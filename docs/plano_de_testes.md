@@ -28,3 +28,9 @@ Validar o módulo de Cadastro de Usuário garantindo que:
 1) Executar o cenário “caminho feliz”; (cadastro com dados válidos)
 2) Executar validações de obrigatoriedade por campo e validar mensagens específicas;
 3) Registrar evidências (prints/logs) e reportar inconsistências. (funcionais e de UX)
+
+## 5. Riscos Identificados
+
+- Falta de validação adequada pode permitir cadastros inválidos;
+- Mensagens genéricas podem impactar a experiência do usuário;
+- Ausência de padronização no comportamento pós-sucesso pode gerar inconsistência funcional.
