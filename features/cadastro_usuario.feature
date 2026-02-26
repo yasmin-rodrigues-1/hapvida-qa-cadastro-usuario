@@ -18,11 +18,11 @@ Feature: Cadastro de Usuário
   Scenario: CT002 - Validar o comportamento consistente após cadastro com sucesso.
     Given que estou na tela de Cadastro de Usuário.
     When informo "Yasmin Rodrigues" no campo nome;
-    And informo "yasmin.rodrigues@email.com" no campo e-mail;
+    And informo "yasmin.rodrigues1@email.com" no campo e-mail;
     And informo "teste123" no campo senha;
     And submeto o formulário de cadastro.
     Then deve ser exibida uma mensagem de sucesso;
-    And o sistema deve executar um comportamento pós-sucesso consistente.
+    And o formulário deve ser limpo ou o usuário deve ser redirecionado conforme comportamento definido.
     # Exemplo: limpar os campos ou redirecionar o usuário
 
   # US02 — Validação de campos obrigatórios
@@ -30,7 +30,7 @@ Feature: Cadastro de Usuário
   Scenario: CT003 - Validar o bloqueio do envio quando o campo nome estiver vazio.
     Given que estou na tela de Cadastro de Usuário.
     When deixo o campo nome em branco;
-    And informo "yasmin.rodrigues@email.com" no campo e-mail;
+    And informo "yasmin.rodrigues2@email.com" no campo e-mail;
     And informo "teste123" no campo senha;
     And submeto o formulário de cadastro;
     Then o envio deve ser bloqueado;
@@ -48,7 +48,7 @@ Feature: Cadastro de Usuário
   Scenario: CT005 - Validar o bloqueio de envio quando o campo senha estiver vazio.
     Given que estou na tela de Cadastro de Usuário.
     When informo "Yasmin Rodrigues" no campo nome;
-    And informo "yasmin.rodrigues@email.com" no campo e-mail;
+    And informo "yasmin.rodrigues3@email.com" no campo e-mail;
     And deixo o campo senha em branco;
     And submeto o formulário de cadastro.
     Then o envio deve ser bloqueado;
@@ -59,7 +59,7 @@ Feature: Cadastro de Usuário
   Scenario: CT006 - Validar rejeição do e-mail sem o caractere @.
     Given que estou na tela de Cadastro de Usuário.
     When informo "Yasmin Rodrigues" no campo nome;
-    And informo "yasmin.rodriguesemail.com" no campo e-mail;
+    And informo "yasmin.rodrigues4email.com" no campo e-mail;
     And informo "teste123" no campo senha;
     And submeto o formulário de cadastro.
     Then o envio deve ser bloqueado;
@@ -68,7 +68,7 @@ Feature: Cadastro de Usuário
   Scenario: CT007 - Validar rejeição do e-mail com espaço no meio.
     Given que estou na tela de Cadastro de Usuário.
     When informo "Yasmin Rodrigues" no campo nome;
-    And informo "yasmin rodrigues@email.com" no campo e-mail;
+    And informo "yasmin rodrigues@5email.com" no campo e-mail;
     And informo "teste123" no campo senha;
     And submeto o formulário de cadastro.
     Then o envio deve ser bloqueado;
