@@ -16,3 +16,7 @@ Tela de Cadastro de Usuário com campos:
 - Nome
 - E-mail
 - Senha
+
+## Observação
+
+Os cenários foram escritos considerando boas práticas de BDD, com foco em clareza, rastreabilidade com as User Stories e cobertura de cenários positivos e negativos.
